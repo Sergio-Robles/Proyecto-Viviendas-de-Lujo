@@ -1,17 +1,143 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contacto</title>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Bienes Raices</title>
+    <link rel="stylesheet" href="<link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/styles.css">
 </head>
+
+
 <body>
-
-    <h1>Contacto</h1>
     
-    <a href="index.html">Index</a>
+    <header class="site-header">
+        <div class="contenedor contenido-header">
+            <div class="barra">
+                <a href="/">
+                    <img src="img/logo.svg" alt="Logotipo">
+                </a>
+                <nav class="navegacion">
+                    <a href="index.html">Principal</a>
+                    <a href="nosotros.html">Nosotros</a>
+                    <a href="anuncios.html">Anuncios</a>
+                    <a href="blog.html">Blog</a>
+                </nav>
+            </div>
+        </div>
+    </header>
 
+    <h1 class="fw-300 centrar-texto">Contacto</h1>
+    <img src="img/destacada3.jpg" alt="Imagen principal">
+
+    <main class="contenedor seccion contenido-centrado">
+        <h2 class="fw-300 centrar-texto">Envianos el formulario de contacto</h2>
+    
+        
+        <form class="contacto" action="">
+            <fieldset><!-- Esto es para separar diferentes campos del formulario -->
+            <legend>Información personal</legend>
+            <!-- El type en input es muy importante porque hara que 
+            el form sea responsive y por ejemplo en telefonos, 
+            en el email saldra la arroba y el telefono los numeros en el teclado. 
+            el laber for= y el input id deberan ser iguales para que el label 
+            reconozca a quien pertenece -->
+                <label for="name">Nombre:</label>
+                <input type="text" id="name" placeholder="Tu Nombre" required>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" placeholder="Tu Correo Electronico" required>
+
+                <label for="telefono">Telefono:</label>
+                <input type="tel" id="telefono" placeholder="Tu telefono" required>
+
+                <label for="mensaje">Mensaje:</label>
+                <textarea id="mensaje"></textarea>
+
+            </fieldset>
+
+            <fieldset>
+            <legend>Informacion sobre la propiedad</legend>
+                <label for="opciones">Vende o Compra</label>
+                <select id="opciones">
+                    <option value="" disabled selected>--Seleccione--</option>
+                    <!-- Usare los campos de disabled para que solo aparezca pero no sea 
+                    seleccionable y selected para que aparezca como opcion principal, ya que si no
+                    apareceria la primera en orden descendente -->
+                    <option value="Compra">Compra</option>
+                    <option value="Vende">Vende</option>
+                    <!-- La opcion value es la que se enviara al lenguaje de backend -->
+                </select>
+
+                <label for="cantidad">Cantidad</label>
+                <input type="number" min="0" max="10">
+                <!-- el min y max solo funciona como validacion en las flechas de la form,
+                para una validacion de lo que se introduce manualmente usare un lenguaje
+                de programacion como javascript -->
+
+            </fieldset>
+
+            <fieldset>
+                <legend>Contacto</legend>
+                
+                <p>Como desea ser contactado:</p>
+                
+                <div class="forma-contacto">
+                    <label for="telefono">Teléfono</label>
+                    <input type="radio" name="contacto" value="telefono" id="telefono">
+                    <label for="correo">Email</label>
+                    <input type="radio" name="contacto" value="correo" id="correo">
+                    <!-- El name aqui y en el select no es lo que recibe el lenguaje de backend, 
+                    sino el value. Por eso el name sirve con el primer fieldset, y podria
+                    ponerlo si fuera a usar javascripot por ejemplo, pero 
+                    usare value para select y radio button-->
+                </div>
+                    <p>Si eligio Teléfono, especifique la fecha y hora</p>
+                    <label for="fecha">Fecha:</label>
+                    <input type="date" id="fecha">
+                    <label for="hora">Hora:</label>
+                    <input type="time" id="hora" min="9:00" max="18:00">
+
+            </fieldset>
+
+            <!-- Muchas validaciones son diferentes segun el navegador, asi la hora o la fecha
+            puede que se vean diferentes en distintos navegadores como 
+            internet explorer, chrome o firefox -->
+
+            <!-- Otra opcion para el form podria ser el checkbox, y se utiliza asi:
+            <p>Elija el Menu</p>
+            <input type="checkbox" name="order" value="hamburguesa">Hamburguesa
+            <input type="checkbox" name="order" value="papas">Papas
+            <input type="checkbox" name="order" value="cerveza">Cerveza
+            Es solo un ejemplo. Podria ser para coches o cualquier otra cosa...-->
+
+            <!-- Otras opciones de input son 
+                <input type="password">(salen un campo para el password que no se ve lo que se introduce)
+                <input type="search">(tiene una cruz ala derecha para borrar lo que se ha introducido)
+                <input type="url">(sirve para que en dispositivos moviles aparezca el .com o la /, para busquedas web)
+            -->
+
+            <input type="submit" value="Enviar" class="boton boton-verde">
+        </form>
+    </main>
+
+    <footer class="site-footer seccion">
+        <div class="contenedor contenedor-footer">
+            <nav class="navegacion">
+                <a href="index.html">Principal</a>
+                <a href="nosotros.html">Nosotros</a>
+                <a href="anuncios.html">Anuncios</a>
+                <a href="blog.html">Blog</a>
+            </nav>
+            <p class="copyright">Todos los derechos reservados &copy;</p>
+        </div>
+    </footer>
 </body>
+
 </html>
+
+
+
