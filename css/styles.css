@@ -154,11 +154,139 @@ h4 {
     color:#71b100;
     font-weight: 700;
 }
+.iconos-caracteristicas {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: space-evenly;
+}
+.iconos-caracteristicas li {
+    display: flex
+}
+.iconos-caracteristicas li img {
+    margin-right: 2rem;
+}
 .ver-todas {
     display: flex;
     justify-content: flex-end;
 }
 
 
+/* Contacto Home  */
+.imagen-contacto {
+    background-image: url(../img/encuentra.jpg);
+    background-position: center center;
+    background-size: cover;
+    height: 40rem;
+    display: flex;
+    align-items: center;
+}
+.contenido-contacto {
+    flex: 1;
+    color: white;
+}
+.contenido-contacto p {
+    font-size: 1.8rem;
+}
 
 
+/* Seccion Inferior */
+
+.seccion-inferior {
+    display: flex;
+    justify-content: space-between;
+}
+.seccion-inferior .blog {
+    flex-basis: 60%;
+}
+.seccion-inferior .testimoniales {
+    flex-basis: calc(40% - 2rem);
+}
+
+.entrada-blog {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 2rem;
+}
+.entrada-blog:last-of-type {
+    margin-bottom: 0;
+}
+.entrada-blog .imagen {
+    flex-basis: 40%;
+}
+.entrada-blog .texto-entrada {
+    flex-basis: calc(60% - 3rem);
+}
+.texto-entrada a {
+    color: black;
+    text-decoration: none;
+}
+.texto-entrada h4 {
+    margin: 0;
+    line-height: 1.4;
+}
+.texto-entrada h4::after {
+    content: '';
+    /* ::after -> Esto es un pseudoelemento, ya que introducira un elemento
+    en el html pero no sera seleccionable en la pagina, es solo
+    una construccion de css. No tiene display definido.
+    Documentacion en MDN Web Docs */
+    display: block;
+    width: 15rem;
+    height: .5rem;
+    background-color: #71b100;
+    margin-top: 1rem;
+}
+.texto-entrada span {
+    color: #e08709;
+}
+
+/* Testimoniales */
+
+.testimonial {
+    background-color: #71b100;
+    font-size: 2.4rem;
+    padding: 2rem;
+    line-height: 170%;
+    color: #ffffff;
+    border-radius: 2rem;
+}
+.testimonial p {
+    text-align: right;
+}
+.testimonial blockquote::before {
+    content: '';
+    background-image: url(../img/comilla.svg);
+    width: 4rem;
+    height: 4rem;
+    position: absolute;
+    left: -2rem;
+    /* Con el ::before creamos el elemento que va antes del blockquote,
+    introducimos la imagen desde el archivo, le damos las 
+    caracteristicas que queramos de ancho y alto y despues la posicion
+    absoluta con respecto al elemento padre que tiene la posicion relativa.
+    Moveremos el elemento padre hacia la derecha 5rem y el elemento 
+    ::before lo moveremos hacia la izquierda -2rem */
+}
+.testimonial blockquote {
+    position: relative;
+    /* Este es el elemento padre, por eso tiene que 
+    ser la posicion relativa. El hijo tendra la absoluta */
+    padding-left: 5rem;
+    font-weight: 300;
+}
+
+/* Footer */
+.site-footer {
+    background-color: #333333;
+    margin: 0;
+}
+.contenedor-footer {
+    padding: 3rem 0;
+    display: flex;
+    justify-content: space-between;
+}
+.copyright {
+    margin: 0;
+    color: #ffffff;
+}
