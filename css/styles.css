@@ -1,5 +1,9 @@
 html {
+    box-sizing: border-box;
     font-size: 62.5%; /** Reset para REMS - 62.5% = 10px de 16px **/
+}
+*, *:before, *:after {
+    box-sizing: inherit;
 }
 
 body {
@@ -13,6 +17,7 @@ img {
     max-width: 100%;
 }
 .contenedor {
+    width: 95%;
     max-width: 85rem;  /** = 1200px; **/
     margin: 0 auto;
 }
@@ -68,6 +73,14 @@ h4 {
      por eso si queremos cambiarlo hay que modificarlos a display:block. */
     text-align: center;
     border: none;
+    display: block;
+    flex: 0 0 100%;
+}
+@media (min-width: 768px) {
+    .boton {
+        display: inline-block;
+        flex: 0 0 auto;
+    }
 }
 .boton:hover {
     cursor: pointer;
@@ -96,18 +109,29 @@ h4 {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    text-align: center;
+}
+@media (min-width: 768px) {
+    .contenido-header{
+        text-align: left;
+    }
 }
 .contenido-header h1 {
     color:#ffffff;
     padding-bottom: 2rem;
     max-width: 60rem;
     line-height: 1.8;
+
 }
 .barra {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
     padding-top: 3rem;
+}
+@media (min-width: 768px) {
+    .barra {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
 }
 
 /** Navegación **/
@@ -119,16 +143,22 @@ h4 {
     si quiero tranparencia en el color usare rgba */
     text-decoration: none;
     font-size: 1.8rem; /** = 18px **/
-    margin-right: 2rem;
     font-family: 'Times New Roman', Times, serif;
+    display: block;
+}
+@media (min-width: 768px) {
+    .navegacion a{
+        display: inline-block;
+        margin-right: 2rem;
+        font-size: 1.5rem;
+    }
+    .navegacion a:last-of-type {
+        margin: 0;  
+    }
 }
 .navegacion a:hover {
     color: #71b100 ;
 }
-.navegacion a:last-of-type {
-    margin: 0;  
-}
-
 
 
 /** Iconos Nosotros **/
@@ -136,26 +166,34 @@ h4 {
     font-weight: 300;
     text-align: center;
 }
-.iconos-nosotros {
-    display: flex;
-    justify-content: space-between;
+@media (min-width: 768px) {
+    .iconos-nosotros {
+        display: flex;
+        justify-content: space-between;
+    }
 }
 .icono {
-    flex-basis: calc(33.3% - 1rem);
     text-align: center;
+}
+@media (min-width: 768px) {
+    .icono {
+        flex-basis: calc(33.3% - 1rem);
+    }
 }
 .icono h3 {
     text-transform: uppercase;
 }
 
 /* Anuncios */
-.contenedor-anuncios {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;/*Esto es para que en la pagina de anuncios se vea
-    en 2 lineas los anuncios y no todos en la misma. Se pone
-    aqui porque es el elemento padre, y afectara al hijo
-    que es .anuncio (flex-shrink)*/
+@media (min-width: 768px) {
+    .contenedor-anuncios {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;/*Esto es para que en la pagina de anuncios se vea
+        en 2 lineas los anuncios y no todos en la misma. Se pone
+        aqui porque es el elemento padre, y afectara al hijo
+        que es .anuncio (flex-shrink)*/
+    }
 }
 .anuncio {
     flex: 0 0 calc(33.3% - 1rem);
@@ -210,7 +248,7 @@ h4 {
     align-items: center;
 }
 .contenido-contacto {
-    flex: 1;
+    flex: 0 0 95%;
     color: white;
 }
 .contenido-contacto p {
@@ -220,31 +258,40 @@ h4 {
 
 /* Seccion Inferior */
 
-.seccion-inferior {
-    display: flex;
-    justify-content: space-between;
-}
-.seccion-inferior .blog {
-    flex-basis: 60%;
-}
-.seccion-inferior .testimoniales {
-    flex-basis: calc(40% - 2rem);
-}
 
+@media (min-width: 768px) {
+    .seccion-inferior {
+        display: flex;
+        justify-content: space-between;
+    }
+    .seccion-inferior .blog {
+        flex-basis: 60%;
+    }
+    .seccion-inferior .testimoniales {
+        flex-basis: calc(40% - 2rem);
+    }
+}
 .entrada-blog {
-    display: flex;
-    justify-content: space-between;
     margin-bottom: 2rem;
+}
+@media (min-width: 768px) {
+    .entrada-blog {
+        display: flex;
+        justify-content: space-between;
+    }
 }
 .entrada-blog:last-of-type {
     margin-bottom: 0;
 }
-.entrada-blog .imagen {
-    flex-basis: 40%;
+@media (min-width: 768px) {
+    .entrada-blog .imagen {
+        flex-basis: 40%;
+    }
+    .entrada-blog .texto-entrada {
+        flex-basis: calc(60% - 3rem);
+    }
 }
-.entrada-blog .texto-entrada {
-    flex-basis: calc(60% - 3rem);
-}
+
 .texto-entrada a {
     color: black;
     text-decoration: none;
@@ -311,9 +358,24 @@ h4 {
 }
 .contenedor-footer {
     padding: 3rem 0;
-    display: flex;
-    justify-content: space-between;
+    text-align: center;
 }
+@media (min-width: 768px) {
+    .contenedor-footer{
+        display: flex;
+        justify-content: space-between;
+    }
+}
+.site-footer nav {
+    display: none;
+}
+@media (min-width: 768px) {
+    .site-footer nav {
+        display: block;
+    }
+}
+/*Los 2 anteriores haran que el footer tenga display:none 
+en la vista de movil pero en la de ordenador display: block*/
 .copyright {
     margin: 0;
     color: #ffffff;
@@ -328,13 +390,16 @@ h4 {
 en columnas.El grid-template-columns nos dara los valores
 con los que las columnas ocuparan la pagina. Hay que revisar cuantos
 elementos hijos hay para saber el numero de columnas. */
-.contenido-nosotros {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);/*fr significa fraccion*/
-    /*Se podria usar tambien: grid-template-columns: 50% 50%;*/
-    /*css grid no usa margin, sino column gap*/
-    grid-column-gap: 2rem;
+@media (min-width: 768px) {
+    .contenido-nosotros {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);/*fr significa fraccion*/
+        /*Se podria usar tambien: grid-template-columns: 50% 50%;*/
+        /*css grid no usa margin, sino column gap*/
+        grid-column-gap: 2rem;
+    }
 }
+
 .texto-nosotros blockquote {
     font-weight: 900;
     font-size: 2rem;
