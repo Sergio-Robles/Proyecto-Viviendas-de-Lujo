@@ -142,15 +142,16 @@ h4 {
     -rgba(255,255,255, .3),
     si quiero tranparencia en el color usare rgba */
     text-decoration: none;
-    font-size: 1.8rem; /** = 18px **/
+    font-size: 2rem; /** = 18px **/
     font-family: 'Times New Roman', Times, serif;
     display: block;
+    line-height: 4rem;
 }
 @media (min-width: 768px) {
     .navegacion a{
         display: inline-block;
         margin-right: 2rem;
-        font-size: 1.5rem;
+        font-size: 2rem;
     }
     .navegacion a:last-of-type {
         margin: 0;  
@@ -250,9 +251,15 @@ h4 {
 .contenido-contacto {
     flex: 0 0 95%;
     color: white;
+    text-align: center;
+    
+}
+.contenido-contacto h2 {
+    line-height: 3.5rem;
 }
 .contenido-contacto p {
     font-size: 1.8rem;
+    line-height: 2.3rem;
 }
 
 
